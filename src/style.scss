@@ -1,0 +1,69 @@
+@use './root.scss' as *;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'RobotoSlab';
+  src: url('./assets/fonts/RobotoSlab-Bold.ttf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'RobotoSlab';
+  src: url('./assets/fonts/RobotoSlab-Regular.ttf');
+  font-weight: 200;
+}
+
+body {
+  font-family: 'RobotoSlab';
+  font-weight: 400;
+  background-image: url('./assets/img/bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(242, 229, 204, 1);
+  background-position: center;
+}
+
+.container {
+  max-width: 1228px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.order-title {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 48px 0 32px 0;
+  h2 {
+      font-size: 40px;
+      color: $label-color;
+  }
+  h5 {
+      font-size: 20px;
+      color: $gray-color;
+  }
+}
+
+@media (max-width: 1000px) {
+  body {
+    background-image: url('./assets/img/bg960.png');
+    background-size: contain;
+    background-position: top;
+  }
+  .container {
+    padding: 46px 32px;
+  }
+}
+
+@media (max-width: 360px) {
+  body {
+    background-image: none;
+  }
+  .container {
+    padding: 80px 16px;
+  }
+}

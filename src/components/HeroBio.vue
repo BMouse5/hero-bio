@@ -323,12 +323,12 @@ const handleFileUpload = (event: Event) => {
   
   photos.value.push(...newPhotos);
   heroInfo.value.heroPhotos = [...photos.value];
+  input.value = '';
 };
   
 //удаление текущего фото (верхний блок)
 const deleteCurrentPhoto = () => {
   if (photos.value.length === 0) return;
-  
   photos.value.splice(currentIndex.value, 1);
   heroInfo.value.heroPhotos = [...photos.value];
   if (currentIndex.value >= photos.value.length) {
@@ -370,6 +370,7 @@ const handleArchiveFileUpload = (event: Event) => {
         heroInfo.value.archivePhotos.video = [...archiveVideos.value];
     }
   });
+  input.value = '';
 };
 
 //удаление фото архива
@@ -549,6 +550,7 @@ defineExpose({ resetInputs });
                 align-items: center;
                 justify-content: center;
                 cursor: pointer;
+                box-shadow: 1px 1px 1px 1px;
             }
         }
         .add-img {
